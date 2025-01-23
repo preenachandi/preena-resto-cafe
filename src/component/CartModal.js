@@ -25,7 +25,7 @@ const CartModal = ({ closeCart }) => {
           Object.entries(cartItems).map(([key, item]) => (
             <div key={key} className="flex justify-between items-center border-b py-2">
               <div>
-                <p className="font-semibold">{getDishName(item.dishId)}</p>
+                <p className="font-semibold">{item.dishName}</p>
                 {item.addons.length > 0 && (
                   <p className="text-sm text-gray-500">
                     Add-ons: {item.addons.map(addon => addon.dish_name).join(", ")}

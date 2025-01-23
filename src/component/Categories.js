@@ -17,7 +17,9 @@ const Categories = ({ dishes }) => {
       setSelectedAddons([]); // Reset selected add-ons
     } else {
       // Directly add the dish to the cart with no add-ons
-      dispatch(addItem({ dishId: dish.dish_id, addons: [] }));
+      dispatch(
+        addItem({ dishId: dish.dish_id, dishName: dish.dish_name, addons: [] })
+      );
     }
   };
 
@@ -66,7 +68,13 @@ const Categories = ({ dishes }) => {
 
   // Confirm addition of dish and selected addons to cart
   const confirmAddToCart = () => {
-    dispatch(addItem({ dishId: selectedDish.dish_id, addons: selectedAddons }));
+    dispatch(
+      addItem({
+        dishId: selectedDish.dish_id,
+        dishName: selectedDish.dish_name,
+        addons: selectedAddons,
+      })
+    );
     setSelectedDish(null);
     setSelectedAddons([]);
   };
