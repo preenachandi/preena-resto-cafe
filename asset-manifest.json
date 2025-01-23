@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/preenachandi/preena-resto-cafe/static/css/main.32d5e1d4.css",
+    "main.js": "/preenachandi/preena-resto-cafe/static/js/main.067c7300.js",
+    "index.html": "/preenachandi/preena-resto-cafe/index.html",
+    "main.32d5e1d4.css.map": "/preenachandi/preena-resto-cafe/static/css/main.32d5e1d4.css.map",
+    "main.067c7300.js.map": "/preenachandi/preena-resto-cafe/static/js/main.067c7300.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.32d5e1d4.css",
+    "static/js/main.067c7300.js"
+  ]
+}
