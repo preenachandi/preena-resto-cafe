@@ -4,17 +4,17 @@ import { addItem, removeItem, deleteItem } from "../redux/cartSlice";
 
 const CartModal = ({ closeCart }) => {
   const cartItems = useSelector((state) => state.cart.items);
-  const menuData = useSelector((state) => state.menu.menuData);  // Get menu data from Redux
+  // const menuData = useSelector((state) => state.menu.menuData);  // Get menu data from Redux
   const dispatch = useDispatch();
 
   // Function to get dish name by filtering menuData
-  const getDishName = (dishId) => {
-    for (const category of menuData) {
-      const foundDish = category.categoryDishes.find(dish => dish.dish_id === dishId);
-      if (foundDish) return foundDish.dish_name;
-    }
-    return "Unknown Item";  // Default if not found
-  };
+  // const getDishName = (dishId) => {
+  //   for (const category of menuData) {
+  //     const foundDish = category.categoryDishes.find(dish => dish.dish_id === dishId);
+  //     if (foundDish) return foundDish.dish_name;
+  //   }
+  //   return "Unknown Item";  // Default if not found
+  // };
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center">
