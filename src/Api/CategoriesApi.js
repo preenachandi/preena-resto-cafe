@@ -1,8 +1,7 @@
 import axios from "axios";
 
 // API URL with the proxy in place
-const API_URL = "https://zartek-task.vercel.app/api/resto-cafe/";
-// const API_URL = "/api/resto-cafe/";
+const API_URL = "https://zartek-task.vercel.app/api/resto-cafe";
 
 export const fetchData = async () => {
   try {
