@@ -97,23 +97,27 @@ const Categories = ({ dishes }) => {
               </p>
             </div>
             <p className="text-sm text-gray-600">{dish.dish_description}</p>
-            <div className="mt-2 flex items-center space-x-2">
-              <button
-                className="bg-green-600 text-white px-3 py-1 rounded-md"
-                onClick={() => dispatch(removeItem({ dishId: dish.dish_id }))}
-              >
-                -
-              </button>
-              <span className="text-lg font-bold">
-                {getDishQuantity(dish.dish_id)}
-              </span>
-              <button
-                className="bg-green-600 text-white px-3 py-1 rounded-md"
-                onClick={() => handleAddToCart(dish)}
-              >
-                +
-              </button>
-            </div>
+            {dish?.dish_Availability ? (
+              <div className="mt-2 flex items-center space-x-2">
+                <button
+                  className="bg-green-600 text-white px-3 py-1 rounded-md"
+                  onClick={() => dispatch(removeItem({ dishId: dish.dish_id }))}
+                >
+                  -
+                </button>
+                <span className="text-lg font-bold">
+                  {getDishQuantity(dish.dish_id)}
+                </span>
+                <button
+                  className="bg-green-600 text-white px-3 py-1 rounded-md"
+                  onClick={() => handleAddToCart(dish)}
+                >
+                  +
+                </button>
+              </div>
+            ) : (
+              <p className="text-red-500">Out of stock</p>
+            )}
           </div>
           <img
             src={dish.dish_image}

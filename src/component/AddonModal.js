@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 const AddonModal = ({
   selectedDish,
@@ -17,36 +17,51 @@ const AddonModal = ({
           <div key={category.addon_category_id}>
             <h3 className="font-semibold">{category.addon_category}</h3>
             {category.addons.map((addon) => (
-              <div key={addon.dish_id} className="flex items-center justify-between">
+              <div
+                key={addon.dish_id}
+                className="flex items-center justify-between"
+              >
                 <span>
                   {addon.dish_name} ({addon.dish_currency} {addon.dish_price})
                 </span>
-                <div className="flex items-center space-x-2">
-                  <button
-                    className="bg-red-500 text-white px-2 py-1 rounded-md"
-                    onClick={() => onAddonQuantityChange(addon, 'remove')}
-                  >
-                    -
-                  </button>
-                  <span className="text-lg font-bold">
-                    {selectedAddons.find((item) => item.dish_id === addon.dish_id)?.quantity || 0}
-                  </span>
-                  <button
-                    className="bg-green-600 text-white px-2 py-1 rounded-md"
-                    onClick={() => onAddonQuantityChange(addon, 'add')}
-                  >
-                    +
-                  </button>
-                </div>
+                {addon.dish_Availability ? (
+                  <div className="flex items-center space-x-2">
+                    <button
+                      className="bg-red-500 text-white px-2 py-1 rounded-md"
+                      onClick={() => onAddonQuantityChange(addon, "remove")}
+                    >
+                      -
+                    </button>
+                    <span className="text-lg font-bold">
+                      {selectedAddons.find(
+                        (item) => item.dish_id === addon.dish_id
+                      )?.quantity || 0}
+                    </span>
+                    <button
+                      className="bg-green-600 text-white px-2 py-1 rounded-md"
+                      onClick={() => onAddonQuantityChange(addon, "add")}
+                    >
+                      +
+                    </button>
+                  </div>
+                ) : (
+                  <p className="text-red-500">Out of stock</p>
+                )}
               </div>
             ))}
           </div>
         ))}
         <div className="flex justify-end mt-4">
-          <button className="bg-red-500 text-white px-4 py-2 rounded-md mr-2" onClick={onCancel}>
+          <button
+            className="bg-red-500 text-white px-4 py-2 rounded-md mr-2"
+            onClick={onCancel}
+          >
             Cancel
           </button>
-          <button className="bg-green-600 text-white px-4 py-2 rounded-md" onClick={onConfirm}>
+          <button
+            className="bg-green-600 text-white px-4 py-2 rounded-md"
+            onClick={onConfirm}
+          >
             Add to Cart
           </button>
         </div>
